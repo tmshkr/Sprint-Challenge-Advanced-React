@@ -11,10 +11,17 @@ it("displays a table", () => {
   expect(document.querySelector("table")).toBeTruthy();
 });
 
-it("displays rows in tbody", async () => {
+it("displays any rows in tbody", async () => {
   render(<PlayerTable />);
   await wait(() =>
     expect(document.querySelectorAll("tbody > tr").length).toBeGreaterThan(0)
+  );
+});
+
+it("displays 101 rows in tbody", async () => {
+  render(<PlayerTable />);
+  await wait(() =>
+    expect(document.querySelectorAll("tbody > tr").length).toBe(101)
   );
 });
 
