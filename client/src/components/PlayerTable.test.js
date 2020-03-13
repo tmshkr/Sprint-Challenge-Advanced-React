@@ -13,16 +13,18 @@ it("displays a table", () => {
 
 it("displays any rows in tbody", async () => {
   render(<PlayerTable />);
-  await wait(() =>
-    expect(document.querySelectorAll("tbody > tr").length).toBeGreaterThan(0)
-  );
+  await wait(() => {
+    const rows = document.querySelectorAll("tbody > tr");
+    expect(rows.length).toBeGreaterThan(0);
+  });
 });
 
 it("displays 101 rows in tbody", async () => {
   render(<PlayerTable />);
-  await wait(() =>
-    expect(document.querySelectorAll("tbody > tr").length).toBe(101)
-  );
+  await wait(() => {
+    const rows = document.querySelectorAll("tbody > tr");
+    expect(rows.length).toBe(101);
+  });
 });
 
 it("displays 3 columns in each row of tbody", async () => {
