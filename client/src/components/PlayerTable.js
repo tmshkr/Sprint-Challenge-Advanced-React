@@ -11,17 +11,9 @@ class PlayerTable extends Component {
   }
 
   componentDidMount() {
-    this.__isMounted = true;
     axios.get("http://localhost:5000/api/players").then(({ data }) => {
-      if (this.__isMounted) {
-        this.setState({ players: data });
-      }
+      this.setState({ players: data });
     });
-  }
-
-  componentWillUnmount() {
-    // to prevent updating unmounted component
-    this.__isMounted = false;
   }
 
   render() {

@@ -3,8 +3,6 @@ Class components are often useful when dealing with state because they have help
 
 Unlike function components, class components persist in memory between renderings, so we can assign attributes and values to the object representing the component using the `this` keyword, which will not cause the component to re-render, as it would when using `setState`.
 
-For example, setting `this.__isMounted = true` in `componentDidMount` and `this.__isMounted = false` in `componentWillUnmount` allows us to know whether the component is mounted, so that the component's logic can respond appropriately, e.g., with a conditional statement that prevents asynchronous tasks from attempting to update an unmounted component.
-
 ### Name three lifecycle methods and their purposes.
 1. `componentDidMount` fires after the component initially mounts to the DOM. During this phase, the DOM is accessible and can be modified. It is also a good time to perform network requests and other asynchronous tasks, so that the application's state will be updated after the request resolves.
  
